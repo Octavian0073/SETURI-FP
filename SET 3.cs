@@ -25,7 +25,7 @@ namespace FP_SETURI
                 num[i] = int.Parse(numereStr[i]);
             }
 
-            for (int i = 0 ; i < num.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
                 sum += num[i];
             }
@@ -62,7 +62,7 @@ namespace FP_SETURI
                     break;
                 }
             }
-            if(nuApare)
+            if (nuApare)
             {
                 Console.WriteLine($"Numarul {k} nu a fost gasit in vector.");
             }
@@ -118,7 +118,7 @@ namespace FP_SETURI
             min = num[0];
             for (int i = 0; i < num.Length; i++)
             {
-                if(max == num[i])
+                if (max == num[i])
                 {
                     maxPresent++;
                 }
@@ -150,7 +150,7 @@ namespace FP_SETURI
             string[] numereStr; int[] num; int e, k; bool isInserted = false;
             Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
-            num = new int[numereStr.Length+1];
+            num = new int[numereStr.Length + 1];
 
             Console.WriteLine("Tastati valoarea numarului de insertat:");
             e = int.Parse(Console.ReadLine());
@@ -158,25 +158,25 @@ namespace FP_SETURI
             Console.WriteLine("Tastati pozitia unde sa fie insertat:");
             k = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < numereStr.Length+1; i++)
+            for (int i = 0; i < numereStr.Length + 1; i++)
             {
-                if(i == k)
+                if (i == k)
                 {
                     num[k] = e;
                     isInserted = true;
                     continue;
                 }
-                if(isInserted)
+                if (isInserted)
                 {
-                    num[i] = int.Parse(numereStr[i-1]);
-                } 
+                    num[i] = int.Parse(numereStr[i - 1]);
+                }
                 else
                 {
                     num[i] = int.Parse(numereStr[i]);
                 }
             }
 
-            for(int i = 0; i < num.Length; i++)
+            for (int i = 0; i < num.Length; i++)
             {
                 Console.Write($"{num[i]} ");
             }
@@ -190,10 +190,10 @@ namespace FP_SETURI
         /// </summary>
         public static void _6()
         {
-            string[] numereStr; int[] num; int k;
+            string[] numereStr; int[] num; int k; bool isDeleted = false;
             Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
-            num = new int[numereStr.Length];
+            num = new int[numereStr.Length - 1];
 
             Console.WriteLine("Tastati pozitia de sters:");
             k = int.Parse(Console.ReadLine());
@@ -202,13 +202,12 @@ namespace FP_SETURI
             {
                 if (i == k)
                 {
-                    num.
-                    isInserted = true;
+                    isDeleted = true;
                     continue;
                 }
-                if (isInserted)
+                if (isDeleted)
                 {
-                    num[i] = int.Parse(numereStr[i - 1]);
+                    num[i - 1] = int.Parse(numereStr[i]);
                 }
                 else
                 {
@@ -230,8 +229,21 @@ namespace FP_SETURI
         /// </summary>
         public static void _7()
         {
+            string[] numereStr; int[] num;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            for (int i = numereStr.Length - 1, j = 0; i >= 0; i--, j++)
+            {
+                num[j] = int.Parse(numereStr[i]);
+            }
 
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -241,7 +253,24 @@ namespace FP_SETURI
         /// </summary>
         public static void _8()
         {
+            string[] numereStr; int[] num; int last;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            last = int.Parse(numereStr[0]);
+
+            for (int i = 0; i < numereStr.Length - 1; i++)
+            {
+                num[i] = int.Parse(numereStr[i + 1]);
+            }
+            num[num.Length - 1] = last;
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -249,7 +278,34 @@ namespace FP_SETURI
         /// </summary>
         public static void _9()
         {
+            string[] numereStr; int[] num, temp; int k;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            Console.WriteLine("Tastati cu cate pozitii sa se mute la stanga vectorul:");
+            k = int.Parse(Console.ReadLine());
+
+            temp = new int[k];
+
+            for (int i = 0; i < k; i++)
+            {
+                temp[i] = int.Parse(numereStr[i]);
+            }
+            for (int i = 0, j = k; i < numereStr.Length - k; i++, j++)
+            {
+                num[i] = int.Parse(numereStr[j]);
+            }
+            for (int i = numereStr.Length - k, j = 0; i < numereStr.Length; i++, j++)
+            {
+                num[i] = temp[j];
+            }
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -259,7 +315,41 @@ namespace FP_SETURI
         /// </summary>
         public static void _10()
         {
+            string[] numereStr; int[] num; int k, mid, min, max;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            Console.WriteLine("Tastati valoarea k:");
+            k = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num[i] = int.Parse(numereStr[i]);
+            }
+
+            min = 0;
+            max = num.Length - 1;
+
+            while (min <= max)
+            {
+                mid = min + (max - min) / 2;
+
+                if (k == num[mid])
+                {
+                    Console.WriteLine($"Numarul {k} a fost gasit in vector la pozitia {mid}.");
+                    return;
+                }
+                if (k > num[mid])
+                {
+                    min = mid + 1;
+                }
+                else
+                {
+                    max = mid - 1;
+                }
+            }
+            Console.WriteLine($"Numarul {k} nu a fost gasit in vector.");
         }
 
         /// <summary>
