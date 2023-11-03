@@ -5,3 +5,10 @@ C:\Users\octav\source\repos\FP SET 1\FP SET 1\obj\Debug\FP SET 1.pdb
 C:\Users\octav\source\repos\FP SET 1\FP SET 1\bin\Debug\FP SET 1.exe.config
 C:\Users\octav\source\repos\FP SET 1\FP SET 1\bin\Debug\FP SET 1.exe
 C:\Users\octav\source\repos\FP SET 1\FP SET 1\bin\Debug\FP SET 1.pdb
+C:\Users\octav\OneDrive\Desktop\FP SETURI\bin\Debug\FP SET 1.exe.config
+C:\Users\octav\OneDrive\Desktop\FP SETURI\bin\Debug\FP SET 1.exe
+C:\Users\octav\OneDrive\Desktop\FP SETURI\bin\Debug\FP SET 1.pdb
+C:\Users\octav\OneDrive\Desktop\FP SETURI\obj\Debug\FP SETURI.csproj.AssemblyReference.cache
+C:\Users\octav\OneDrive\Desktop\FP SETURI\obj\Debug\FP SETURI.csproj.CoreCompileInputs.cache
+C:\Users\octav\OneDrive\Desktop\FP SETURI\obj\Debug\FP SET 1.exe
+C:\Users\octav\OneDrive\Desktop\FP SETURI\obj\Debug\FP SET 1.pdb

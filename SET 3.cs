@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -358,7 +359,34 @@ namespace FP_SETURI
         /// </summary>
         public static void _11()
         {
+            int n; int[] num;
 
+            Console.WriteLine("Tastati valoarea n:");
+            n = int.Parse(Console.ReadLine());
+            num = new int[n + 1];
+
+            for(int i = 0; i <= n; i++)
+            {
+                num[i] = i;
+            }
+
+            for(int i = 2; i * i <= n; i++)
+            {
+                if (num[i] != 0)
+                {
+                    for(int j = i * i; j <= n; j += i)
+                    {
+                        num[j] = 0;
+                    }
+                }
+            }
+            for(int i = 2; i <= n; i++)
+            {
+                if (num[i] != 0)
+                {
+                    Console.Write($"{num[i]} ");
+                }
+            }
         }
 
         /// <summary>
@@ -366,7 +394,35 @@ namespace FP_SETURI
         /// </summary>
         public static void _12()
         {
+            string[] numereStr; int[] num; int min, temp;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num[i] = int.Parse(numereStr[i]);
+            }
+
+            for(int i = 0; i < num.Length - 1; i++)
+            {
+                min = i;
+                for(int j = i + 1; j < num.Length; j++)
+                {
+                    if (num[j] < num[min])
+                    {
+                        min = j;
+                    }
+                }
+                temp = num[i];
+                num[i] = num[min];
+                num[min] = temp;
+            }
+
+            for(int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
         }
 
         /// <summary>
@@ -374,7 +430,36 @@ namespace FP_SETURI
         /// </summary>
         public static void _13()
         {
+            string[] numereStr; int[] num; int temp;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num[i] = int.Parse(numereStr[i]);
+            }
+
+            for (int i = 0; i < num.Length - 1; i++)
+            {
+                if (num[i] > num[i + 1])
+                {
+                    for (int j = i + 1; j > 0; j--)
+                    {
+                        if (num[j - 1] > num[j])
+                        {
+                            temp = num[j - 1];
+                            num[j - 1] = num[j];
+                            num[j] = temp;
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
         }
 
         /// <summary>
@@ -392,8 +477,24 @@ namespace FP_SETURI
         /// </summary>
         public static void _15()
         {
+            string[] numereStr; List<int> num; int temp;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new List<int>();
 
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num.Add(int.Parse(numereStr[i]));
+            }
+
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
         }
+
+
 
         /// <summary>
         /// Se da un vector de n numere naturale. Determinati cel mai mare divizor comun al elementelor vectorului.
