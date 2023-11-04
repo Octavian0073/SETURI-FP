@@ -551,7 +551,48 @@ namespace FP_SETURI
         /// </summary>
         public static void _17()
         {
+            int n, b, d; Stack<int> num = new Stack<int>();
+            Console.WriteLine("Tastati un numar n in baza 10:");
+            Console.Write("n=");
+            n = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Tastati baza in care sa se converteasca numarul n:");
+            b = int.Parse(Console.ReadLine());
+
+            if(b > 16)
+            {
+                Console.WriteLine("Baza de conversie este prea mare.");
+                return;
+            }
+
+            while(n > 0)
+            {
+                num.Push(n % b);
+                n /= b;
+            }
+
+            while(num.Count > 0)
+            {
+                d = num.Pop();
+
+                if(d < 10)
+                {
+                    Console.Write(d);
+                }
+                else
+                {
+                    switch (d)
+                    {
+                        case 10: Console.Write("A"); break;
+                        case 11: Console.Write("B"); break;
+                        case 12: Console.Write("C"); break;
+                        case 13: Console.Write("D"); break;
+                        case 14: Console.Write("E"); break;
+                        case 15: Console.Write("F"); break;
+                    }
+                }
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -561,7 +602,26 @@ namespace FP_SETURI
         /// </summary>
         public static void _18()
         {
+            string[] qStr; int[] q; double x, result = 0;
+            Console.WriteLine("Tastati coeficientii polinomului, separandu i printr un spatiu:");
+            qStr = Console.ReadLine().Split(' ');
+            q = new int[qStr.Length];
 
+            Console.WriteLine("Tastati punctul x:");
+            Console.Write("x=");
+            x = double.Parse(Console.ReadLine());
+
+            for (int i = 0; i < qStr.Length; i++)
+            {
+                q[i] = int.Parse(qStr[i]);
+            }
+
+            for(int i = 0; i < q.Length; i++)
+            {
+                result += q[i] * Math.Pow(x, i);
+            }
+
+            Console.WriteLine($"{result}");
         }
 
         /// <summary>
@@ -572,7 +632,50 @@ namespace FP_SETURI
         /// </summary>
         public static void _19()
         {
+            string[] numereStr; int[] s, p; bool contains; int count = 0;
+            Console.WriteLine("Tastati numerele vectorului s, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            s = new int[numereStr.Length];
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                s[i] = int.Parse(numereStr[i]);
+            }
 
+            Console.WriteLine("Tastati numerele vectorului p, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            p = new int[numereStr.Length];
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                p[i] = int.Parse(numereStr[i]);
+            }
+
+            for(int i = 0; i < s.Length - p.Length + 1; i++)
+            {
+                contains = true;
+                if (s[i] == p[0])
+                {
+                    for(int j = 1, k = i + 1; j < p.Length; j++, k++) 
+                    {
+                        if (s[k] != p[j])
+                        {
+                            contains = false;
+                            continue;
+                        }
+                    }
+                    if(contains)
+                    {
+                        count++;
+                    }
+                }
+            }
+            if(count == 0)
+            {
+                Console.WriteLine("Vectorul s nu contine vectorul p, in totalitate, niciodata.");
+            }
+            else
+            {
+                Console.WriteLine($"Vectorul p apare in vectorul s de {count} ori.");
+            }
         }
 
         /// <summary>
