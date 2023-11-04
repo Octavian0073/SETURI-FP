@@ -268,7 +268,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        ///   Afisati in ordine inversa cifrele unui numar n.
+        /// Afisati in ordine inversa cifrele unui numar n.
         /// </summary>
         private static void _11()
         {
@@ -501,7 +501,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _17()
         {
-            int a, b, cmmdc;
+            int a, b, cmmdc, cmmmc;
             Console.WriteLine("Tastati doua numere a, respectiv b:");
             Console.Write("a=");
             a = int.Parse(Console.ReadLine());
@@ -520,8 +520,8 @@ namespace FP_SETURI
             }
 
             cmmdc = gcd(a, b);
-            Console.WriteLine($"{cmmdc}");
-
+            cmmmc = a * b / cmmdc;
+            Console.WriteLine($"Cel mai mare divizor comun este {cmmdc}, iar cel mai mic multiplu comun este {cmmmc}.");
         }
         public static int gcd(int a, int b)
         {

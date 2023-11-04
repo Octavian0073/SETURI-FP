@@ -487,23 +487,64 @@ namespace FP_SETURI
                 num.Add(int.Parse(numereStr[i]));
             }
 
+            for(int i = 0; i< num.Count - 1; i++)
+            {
+                for(int j = i + 1; j < num.Count; j++)
+                {
+                    if (num[i] == num[j])
+                    {
+                        num.RemoveAt(j);
+                    }
+                }
+            }
 
-            for (int i = 0; i < num.Length; i++)
+            for (int i = 0; i < num.Count; i++)
             {
                 Console.Write($"{num[i]} ");
             }
         }
-
-
 
         /// <summary>
         /// Se da un vector de n numere naturale. Determinati cel mai mare divizor comun al elementelor vectorului.
         /// </summary>
         public static void _16()
         {
+            string[] numereStr; int[] num; int cmmdc;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num[i] = int.Parse(numereStr[i]);
+            }
+
+            cmmdc = num[0];
+
+            for(int i = 0; i < num.Length; i++)
+            {
+                cmmdc = gcd(cmmdc, num[i]);
+
+                if(cmmdc == 1)
+                {
+                    break;
+                }
+            }
+            Console.WriteLine($"Cel mai mare divizor comun al elementelor din vector, este {cmmdc}.");
         }
 
+        public static int gcd(int a, int b)
+        {
+            int r;
+            while (a % b > 0)
+            {
+                r = a % b;
+                a = b;
+                b = r;
+            }
+            return b;
+        }
+    
         /// <summary>
         /// Se da un numar n in baza 10 si un numar b. 1 < b < 17. Sa se converteasca si 
         /// sa se afiseze numarul n in baza b.
