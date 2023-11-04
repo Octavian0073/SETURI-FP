@@ -469,7 +469,26 @@ namespace FP_SETURI
         /// </summary>
         public static void _14()
         {
+            string[] numereStr; int[] num; int temp, last;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                num[i] = int.Parse(numereStr[i]);
+            }
+            last = num.Length - 1;
+
+            for(int i = 0; i < num.Length; i++)
+            {
+
+            }
+
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.Write($"{num[i]} ");
+            }
         }
 
         /// <summary>
@@ -477,7 +496,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _15()
         {
-            string[] numereStr; List<int> num; int temp;
+            string[] numereStr; List<int> num;
             Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
             num = new List<int>();
