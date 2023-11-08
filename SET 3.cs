@@ -22,14 +22,11 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 sum += num[i];
-            }
+
             Console.WriteLine($"Suma numerelor din vector este {sum}.");
         }
 
@@ -49,9 +46,7 @@ namespace FP_SETURI
             k = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             for (int i = 0; i < num.Length; i++)
             {
@@ -64,9 +59,7 @@ namespace FP_SETURI
                 }
             }
             if (nuApare)
-            {
-                Console.WriteLine($"Numarul {k} nu a fost gasit in vector.");
-            }
+                Console.WriteLine($"Numarul {k} nu a fost gasit in vector.")
         }
 
         /// <summary>
@@ -81,9 +74,8 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
+
             min = num[0];
             for (int i = 0; i < num.Length; i++)
             {
@@ -113,20 +105,17 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
+
             min = num[0];
             for (int i = 0; i < num.Length; i++)
             {
                 if (max == num[i])
-                {
                     maxPresent++;
-                }
+
                 if (min == num[i])
-                {
                     minPresent++;
-                }
+
                 if (num[i] > max)
                 {
                     max = num[i];
@@ -168,19 +157,14 @@ namespace FP_SETURI
                     continue;
                 }
                 if (isInserted)
-                {
                     num[i] = int.Parse(numereStr[i - 1]);
-                }
                 else
-                {
                     num[i] = int.Parse(numereStr[i]);
-                }
             }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
+
             Console.WriteLine();
         }
 
@@ -207,19 +191,14 @@ namespace FP_SETURI
                     continue;
                 }
                 if (isDeleted)
-                {
                     num[i - 1] = int.Parse(numereStr[i]);
-                }
                 else
-                {
                     num[i] = int.Parse(numereStr[i]);
-                }
             }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
+
             Console.WriteLine();
         }
 
@@ -236,14 +215,11 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = numereStr.Length - 1, j = 0; i >= 0; i--, j++)
-            {
                 num[j] = int.Parse(numereStr[i]);
-            }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
+
             Console.WriteLine();
         }
 
@@ -262,15 +238,13 @@ namespace FP_SETURI
             last = int.Parse(numereStr[0]);
 
             for (int i = 0; i < numereStr.Length - 1; i++)
-            {
                 num[i] = int.Parse(numereStr[i + 1]);
-            }
+
             num[num.Length - 1] = last;
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
+
             Console.WriteLine();
         }
 
@@ -290,22 +264,17 @@ namespace FP_SETURI
             temp = new int[k];
 
             for (int i = 0; i < k; i++)
-            {
                 temp[i] = int.Parse(numereStr[i]);
-            }
+
             for (int i = 0, j = k; i < numereStr.Length - k; i++, j++)
-            {
                 num[i] = int.Parse(numereStr[j]);
-            }
+
             for (int i = numereStr.Length - k, j = 0; i < numereStr.Length; i++, j++)
-            {
                 num[i] = temp[j];
-            }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
+
             Console.WriteLine();
         }
 
@@ -325,9 +294,7 @@ namespace FP_SETURI
             k = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             min = 0;
             max = num.Length - 1;
@@ -335,20 +302,15 @@ namespace FP_SETURI
             while (min <= max)
             {
                 mid = min + (max - min) / 2;
-
                 if (k == num[mid])
                 {
                     Console.WriteLine($"Numarul {k} a fost gasit in vector la pozitia {mid}.");
                     return;
                 }
                 if (k > num[mid])
-                {
                     min = mid + 1;
-                }
                 else
-                {
                     max = mid - 1;
-                }
             }
             Console.WriteLine($"Numarul {k} nu a fost gasit in vector.");
         }
@@ -366,27 +328,19 @@ namespace FP_SETURI
             num = new int[n + 1];
 
             for(int i = 0; i <= n; i++)
-            {
                 num[i] = i;
-            }
 
             for(int i = 2; i * i <= n; i++)
             {
                 if (num[i] != 0)
                 {
                     for(int j = i * i; j <= n; j += i)
-                    {
                         num[j] = 0;
-                    }
                 }
             }
             for(int i = 2; i <= n; i++)
-            {
                 if (num[i] != 0)
-                {
                     Console.Write($"{num[i]} ");
-                }
-            }
         }
 
         /// <summary>
@@ -408,21 +362,16 @@ namespace FP_SETURI
             {
                 min = i;
                 for(int j = i + 1; j < num.Length; j++)
-                {
                     if (num[j] < num[min])
-                    {
                         min = j;
-                    }
-                }
+
                 temp = num[i];
                 num[i] = num[min];
                 num[min] = temp;
             }
 
             for(int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
         }
 
         /// <summary>
@@ -436,9 +385,7 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             for (int i = 0; i < num.Length - 1; i++)
             {
@@ -457,9 +404,7 @@ namespace FP_SETURI
             }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
         }
 
         /// <summary>
@@ -475,9 +420,7 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             for(int i = 0; i < num.Length; i++)
             {
@@ -491,9 +434,7 @@ namespace FP_SETURI
             }
 
             for (int i = 0; i < num.Length; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
         }
 
         /// <summary>
@@ -507,25 +448,19 @@ namespace FP_SETURI
             num = new List<int>();
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num.Add(int.Parse(numereStr[i]));
-            }
 
             for(int i = 0; i< num.Count - 1; i++)
             {
                 for(int j = i + 1; j < num.Count; j++)
                 {
                     if (num[i] == num[j])
-                    {
                         num.RemoveAt(j);
-                    }
                 }
             }
 
             for (int i = 0; i < num.Count; i++)
-            {
                 Console.Write($"{num[i]} ");
-            }
         }
 
         /// <summary>
@@ -539,20 +474,15 @@ namespace FP_SETURI
             num = new int[numereStr.Length];
 
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 num[i] = int.Parse(numereStr[i]);
-            }
 
             cmmdc = num[0];
 
             for(int i = 0; i < num.Length; i++)
             {
                 cmmdc = gcd(cmmdc, num[i]);
-
                 if(cmmdc == 1)
-                {
                     break;
-                }
             }
             Console.WriteLine($"Cel mai mare divizor comun al elementelor din vector, este {cmmdc}.");
         }
@@ -600,9 +530,7 @@ namespace FP_SETURI
                 d = num.Pop();
 
                 if(d < 10)
-                {
                     Console.Write(d);
-                }
                 else
                 {
                     switch (d)
@@ -636,14 +564,10 @@ namespace FP_SETURI
             x = double.Parse(Console.ReadLine());
 
             for (int i = 0; i < qStr.Length; i++)
-            {
                 q[i] = int.Parse(qStr[i]);
-            }
 
             for(int i = 0; i < q.Length; i++)
-            {
                 result += q[i] * Math.Pow(x, i);
-            }
 
             Console.WriteLine($"{result}");
         }
@@ -661,17 +585,13 @@ namespace FP_SETURI
             numereStr = Console.ReadLine().Split(' ');
             s = new int[numereStr.Length];
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 s[i] = int.Parse(numereStr[i]);
-            }
 
             Console.WriteLine("Tastati numerele vectorului p, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
             p = new int[numereStr.Length];
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 p[i] = int.Parse(numereStr[i]);
-            }
 
             for(int i = 0; i < s.Length - p.Length + 1; i++)
             {
@@ -687,19 +607,13 @@ namespace FP_SETURI
                         }
                     }
                     if(contains)
-                    {
                         count++;
-                    }
                 }
             }
             if(count == 0)
-            {
                 Console.WriteLine("Vectorul s nu contine vectorul p, in totalitate, niciodata.");
-            }
             else
-            {
                 Console.WriteLine($"Vectorul p apare in vectorul s de {count} ori.");
-            }
         }
 
         /// <summary>
@@ -715,17 +629,13 @@ namespace FP_SETURI
             numereStr = Console.ReadLine().Split(' ');
             s1 = new int[numereStr.Length];
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 s1[i] = int.Parse(numereStr[i]);
-            }
 
             Console.WriteLine("Tastati numerele vectorului p, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
             s2 = new int[numereStr.Length];
             for (int i = 0; i < numereStr.Length; i++)
-            {
                 s2[i] = int.Parse(numereStr[i]);
-            }
 
             Console.WriteLine($"Numarul de suprapuneri a unui sirag peste celalalt, este {count}.");
 
