@@ -24,9 +24,7 @@ namespace FP_SETURI
                 n = int.Parse(Console.ReadLine());
 
                 if(n % 2 == 0)
-                {
                     countEvens++;
-                }
             }
             Console.WriteLine($"Sunt {countEvens} numere pare in secventa data.");
         }
@@ -42,21 +40,16 @@ namespace FP_SETURI
             last = int.Parse(Console.ReadLine());
 
             if (first % 2 == 0 && last % 2 == 0)
-            {
                 evens = 1 + (last - first) / 2;
-            }
+
             if (first % 2 != 0 && last % 2 != 0)
-            {
                 evens = (last - first) / 2;
-            }
+
             if(first % 2 == 0 && last % 2 != 0)
-            {
                 evens = 1 + (last - first - 1) / 2;
-            }
+
             if(first % 2 != 0 && last % 2 == 0)
-            {
                 evens = 1 + (last - first - 1) / 2;
-            }
 
             Console.WriteLine($"Sunt {evens} numere pare in secventa data.");
         }
@@ -77,18 +70,11 @@ namespace FP_SETURI
                 n = int.Parse(Console.ReadLine());
 
                 if (n > 0)
-                {
                     countPositive++;
-                }
                 if (n == 0)
-                {
                     countZero++;
-                }
                 if (n < 0)
-                {
                     countNegatives++;
-                }
-
             }
             Console.WriteLine($"Sunt {countPositive} numere pozitive, {countNegatives} numere negative si {countZero} zerouri in secventa data.");
         }
@@ -105,9 +91,7 @@ namespace FP_SETURI
 
             sum = n * (n + 1)/2;
             for(int i = 1; i <= n; i++)
-            {
                 product *= i;
-            }
 
             Console.WriteLine($"Suma numerelor de la 1 la n este {sum}, iar produsul lor este {product}.");
         }
@@ -139,12 +123,9 @@ namespace FP_SETURI
                 }
             }
             if(isPresent)
-            {
                 Console.WriteLine($"Numarul {a} se afla la pozitia {p}.");
-            }else
-            {
+            else
                 Console.WriteLine($"Numarul {a} nu se afla in secventa.");
-            }
         }
 
         /// <summary>
@@ -164,9 +145,7 @@ namespace FP_SETURI
                 x = int.Parse(Console.ReadLine());
 
                 if (x == i)
-                {
                     a++;
-                }
             }
             Console.WriteLine($"Sunt {a} numere care se afla pe pozitia.");
         }
@@ -187,13 +166,9 @@ namespace FP_SETURI
                 x = int.Parse(Console.ReadLine());
 
                 if (x >= y) 
-                {
                     y = x; 
-                }
                 else
-                {
                     Console.WriteLine("Numerele din secventa nu sunt in ordine crescatoare.");
-                }
             }
             Console.WriteLine("Numerele din secventa sunt in ordine crescatoare.");
         }
@@ -214,17 +189,11 @@ namespace FP_SETURI
                 x = int.Parse(Console.ReadLine());
 
                 if(i == 0)
-                {
                     min = x;
-                }
                 if (x >= max)
-                {
                     max = x;
-                }
                 if(x <= min)
-                {
                     min = x;
-                }
             }
             Console.WriteLine($"Cel mai mic numar din secventa este {min}, iar cel mai mare este {max}.");
         }
@@ -275,16 +244,13 @@ namespace FP_SETURI
             if(x <= y)
             {
                 x = y;
-
                 for (int i = 0; i < n - counterForEquals; i++)
                 {
                     Console.WriteLine("Introduceti un numar din secventa:");
                     y = int.Parse(Console.ReadLine());
 
                     if (x <= y)
-                    {
                         x = y;
-                    } 
                     else
                     {
                         Console.WriteLine($"Secventa nu este monotona.");
@@ -296,16 +262,13 @@ namespace FP_SETURI
             else
             {
                 x = y;
-
                 for (int i = 0; i < n - counterForEquals; i++)
                 {
                     Console.WriteLine("Introduceti un numar din secventa:");
                     y = int.Parse(Console.ReadLine());
 
                     if (x >= y)
-                    {
                         x = y;
-                    }
                     else
                     {
                         Console.WriteLine($"Secventa nu este monotona.");
@@ -333,9 +296,7 @@ namespace FP_SETURI
                 y = int.Parse(Console.ReadLine());
 
                 if(y == x)
-                {
                     consecutive++;
-                } 
                 else
                 {
                     if(consecutive > maxim)
@@ -388,12 +349,10 @@ namespace FP_SETURI
                 x = int.Parse(Console.ReadLine());
 
                 if(x != 0)
-                {
                     consecutive++;
-                } 
                 else
                 {
-                   if(consecutive != 0) //daca un grup se refera la cel putin 2 cifre dintre 0 uri, atunci am fi completat cu '&& consecutive >= 2'
+                    if(consecutive != 0) //daca un grup se refera la cel putin 2 cifre dintre 0 uri, atunci am fi completat cu '&& consecutive >= 2'
                     {
                         nrGrupuri++;
                         consecutive = 0;
@@ -401,13 +360,9 @@ namespace FP_SETURI
                 }
             }
             if(nrGrupuri > 0)
-            {
                 Console.WriteLine($"Numarul de grupuri din secventa este de {nrGrupuri}.");
-            }
             else
-            {
                 Console.WriteLine($"Nu sunt grupuri.");
-            }
         }
 
         /// <summary>
@@ -433,22 +388,15 @@ namespace FP_SETURI
                 y = int.Parse(Console.ReadLine());
 
                 if(y < x && hasPassed == true || first < y && hasPassed == true)
-                {
                     isNotCR = true;
-                }
+
                 if(y < x && hasPassed == false)
-                {
                     hasPassed = true;
-                }
             }
             if(isNotCR)
-            {
                 Console.WriteLine("Secventa nu e crescatoare rotita.");
-            }
             else
-            {
                 Console.WriteLine("Secventa e crescatoare rotita.");
-            }
         }
 
         /// <summary>
@@ -485,13 +433,10 @@ namespace FP_SETURI
                     }
 
                     if (y < x && hasPassed == true || first < y && hasPassed == true)
-                    {
                         isNotMR = true;
-                    }
+
                     if (y < x && hasPassed == false)
-                    {
                         hasPassed = true;
-                    }
                 }
             }
             else
@@ -506,23 +451,16 @@ namespace FP_SETURI
                     }
 
                     if (y > x && hasPassed == true || first > y && hasPassed == true)
-                    {
                         isNotMR = true;
-                    }
+
                     if (y > x && hasPassed == false)
-                    {
                         hasPassed = true;
-                    }
                 }
             }
             if (isNotMR)
-            {
                 Console.WriteLine("Secventa nu e monotona rotita.");
-            }
             else
-            {
                 Console.WriteLine("Secventa e monotona rotita.");
-            }
         }
 
         /// <summary>
@@ -547,22 +485,15 @@ namespace FP_SETURI
                 y = int.Parse(Console.ReadLine());
 
                 if (y > x && hasPassed == true)
-                {
                     isNotBit = true;
-                }
+
                 if (y < x && hasPassed == false)
-                {
                     hasPassed = true;
-                }
             }
             if (isNotBit)
-            {
                 Console.WriteLine("Secventa nu e bitonica.");
-            }
             else
-            {
                 Console.WriteLine("Secventa e bitonica.");
-            }
         }
 
         /// <summary>
@@ -588,26 +519,17 @@ namespace FP_SETURI
                 y = int.Parse(Console.ReadLine());
 
                 if(y > x && hasPassed1 == false && hasPassed2 == false)
-                {
                     hasPassed1 = true;
-                }
+
                 if (y < x && hasPassed1 == true && hasPassed2 == false)
-                {
                     hasPassed2 = true;
-                }
+
                 if (y > x && hasPassed1 == true && hasPassed2 == true)
-                {
-                    isNotBitR = true;
-                }
             }
             if (isNotBitR)
-            {
                 Console.WriteLine("Secventa nu e bitonica rotita.");
-            }
             else
-            {
                 Console.WriteLine("Secventa e bitonica rotita.");
-            }
         }
 
         /// <summary>
@@ -650,13 +572,9 @@ namespace FP_SETURI
                 }
             }
             if(isIncorrect)
-            {
                 Console.WriteLine($"Secventa nu este corecta!");
-            }
             else
-            {
                 Console.WriteLine($"Secventa este corecta! Nivelul de incuibare al secventei este de {nestLevel} nivele.");
-            }
         }
     }
 }

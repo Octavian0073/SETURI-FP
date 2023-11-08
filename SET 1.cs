@@ -219,10 +219,8 @@ namespace FP_SETURI
             n = int.Parse(Console.ReadLine());
 
             for(int i = 1; i <= n; i++)
-            {
                 if(n % i == 0)
                     Console.WriteLine(i);
-            }
         }
 
         /// <summary>
@@ -265,9 +263,8 @@ namespace FP_SETURI
             n = Console.ReadLine();
 
             for(int i = n.Length - 1; i >= 0; i--)
-            {
                 Console.Write($"{n[i]}");
-            }
+
             Console.WriteLine();
         }
 
@@ -286,10 +283,9 @@ namespace FP_SETURI
             max = int.Parse(Console.ReadLine());
 
             for(int i = min; i <= max; i++)
-            {
                 if(n % i == 0)
                     countDivisors++;
-            }
+
             Console.WriteLine($"Numarul de divizori ai lui {n} din intervalul [{min}, {max}] este {countDivisors}.");
         }
 
@@ -331,10 +327,8 @@ namespace FP_SETURI
             n = Console.ReadLine();
 
             for (int i = 0, j = n.Length - 1; i <= n.Length / 2; i++, j--)
-            {
                 if (n[i] != n[j])
                     isPalindrom = false;
-            }
 
             if(isPalindrom)
                 Console.WriteLine($"Numarul {n} este un numar palindrom.");
@@ -379,9 +373,8 @@ namespace FP_SETURI
             }
 
             for(int i = 0; i < arr.Length; i++)
-            {
                 Console.Write($" {arr[i]}");
-            }
+
             Console.WriteLine();
         }
 
@@ -534,7 +527,6 @@ namespace FP_SETURI
                 else
                     i++;
             }
-
             Console.WriteLine(_18displayPrimeFactors(primeFactors));
         }
         private static string _18displayPrimeFactors(List<int> primeFactors)
@@ -574,10 +566,8 @@ namespace FP_SETURI
             n = Console.ReadLine();
 
             for(int i = 0; i < n.Length; i++) 
-            {
                 if (!number.Contains(n[i])) 
                     number.Add(n[i]);
-            }
             
             if (number.Count == 2)
                 Console.WriteLine($"Numarul {n} este un numar compus din 2 cifre care se tot repeta.");
