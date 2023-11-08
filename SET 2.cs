@@ -520,11 +520,10 @@ namespace FP_SETURI
 
                 if(y > x && hasPassed1 == false && hasPassed2 == false)
                     hasPassed1 = true;
-
                 if (y < x && hasPassed1 == true && hasPassed2 == false)
                     hasPassed2 = true;
-
                 if (y > x && hasPassed1 == true && hasPassed2 == true)
+                    isNotBitR = true;
             }
             if (isNotBitR)
                 Console.WriteLine("Secventa nu e bitonica rotita.");

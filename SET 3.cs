@@ -59,7 +59,7 @@ namespace FP_SETURI
                 }
             }
             if (nuApare)
-                Console.WriteLine($"Numarul {k} nu a fost gasit in vector.")
+                Console.WriteLine($"Numarul {k} nu a fost gasit in vector.");
         }
 
         /// <summary>
@@ -624,7 +624,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _20()
         {
-            string[] numereStr; int[] s1, s2; bool contains; int count = 0;
+            string[] numereStr; int[] s1, s2; int count = 0;
             Console.WriteLine("Tastati numerele vectorului s, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
             s1 = new int[numereStr.Length];
@@ -637,8 +637,9 @@ namespace FP_SETURI
             for (int i = 0; i < numereStr.Length; i++)
                 s2[i] = int.Parse(numereStr[i]);
 
-            Console.WriteLine($"Numarul de suprapuneri a unui sirag peste celalalt, este {count}.");
 
+
+            Console.WriteLine($"Numarul de suprapuneri a unui sirag peste celalalt, este {count}.");
         }
 
         /// <summary>
@@ -647,7 +648,44 @@ namespace FP_SETURI
         /// </summary>
         public static void _21()
         {
+            string[] v1, v2;  int idx = 0, result = 0;
+            Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
+            v1 = Console.ReadLine().Split(' ');
 
+            Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
+            v2 = Console.ReadLine().Split(' ');
+
+            for(int i = 0; i < v1.Length && i < v2.Length; i++)
+            {
+                idx = i;
+                for (int j = 0; j < v1[i].Length && j < v2[i].Length; j++)
+                {
+                    if ((int)v1[i][j] == (int)v2[i][j])
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        result = ((int)v1[i][j] - (int)v2[i][j]);
+                        break;
+                    }
+                }
+            }
+            if (v1[idx].Length < v2[idx].Length)
+            {
+                result = v1[idx].Length - v2[idx].Length;
+            }
+            if (v1[idx].Length > v2[idx].Length)
+            {
+                result = v1[idx].Length - v2[idx].Length;
+            }
+
+            if (result < 0)
+                Console.WriteLine($"DPDV lexicografic, vectorul v1 este primul, urmat de v2.");
+            else if (result > 0)
+                Console.WriteLine($"DPDV lexicografic, vectorul v2 este primul, urmat de v1.");
+            else
+                Console.WriteLine("Vectorii sunt identici dpdv lexicografic.");
         }
 
         /// <summary>
