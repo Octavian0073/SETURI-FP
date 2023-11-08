@@ -710,6 +710,24 @@ namespace FP_SETURI
         /// </summary>
         public static void _20()
         {
+            string[] numereStr; int[] s1, s2; bool contains; int count = 0;
+            Console.WriteLine("Tastati numerele vectorului s, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            s1 = new int[numereStr.Length];
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                s1[i] = int.Parse(numereStr[i]);
+            }
+
+            Console.WriteLine("Tastati numerele vectorului p, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            s2 = new int[numereStr.Length];
+            for (int i = 0; i < numereStr.Length; i++)
+            {
+                s2[i] = int.Parse(numereStr[i]);
+            }
+
+            Console.WriteLine($"Numarul de suprapuneri a unui sirag peste celalalt, este {count}.");
 
         }
 

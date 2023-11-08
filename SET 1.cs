@@ -66,12 +66,9 @@ namespace FP_SETURI
             k = int.Parse(Console.ReadLine());
 
             if((n % k) == 0)
-            {
                 Console.WriteLine("n se divide la k");
-            } else
-            {
+            else
                 Console.WriteLine("n nu se divide la k");
-            }
         }
 
         /// <summary>
@@ -84,12 +81,9 @@ namespace FP_SETURI
             Console.Write("y=");
             y = int.Parse(Console.ReadLine());
             if (DateTime.IsLeapYear(y))
-            {
                 Console.WriteLine($"Anul {y} este un an bisect.");
-            } else
-            {
+            else
                 Console.WriteLine($"Anul {y} nu este un an bisect.");
-            }
         }
 
         public static void _4Prim()
@@ -100,18 +94,20 @@ namespace FP_SETURI
             y = int.Parse(Console.ReadLine());
             if (y % 4 == 0)
             {
-                if(y % 100 == 0)
+                if (y % 100 == 0)
                 {
-                    if(y % 400 == 0)
+                    if (y % 400 == 0)
                     {
                         Console.WriteLine($"Anul {y} este un an bisect.");
                         return;
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine($"Anul {y} nu este un an bisect.");
                         return;
                     }
-                } else
+                }
+                else
                 {
                     Console.WriteLine($"Anul {y} este un an bisect.");
                     return;
@@ -128,7 +124,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _5()
         {
-            int n, p, k, nr;
+            int n, p = 0, k, nr;
             Console.WriteLine("Tastati un numar:");
             Console.Write("n=");
             n = int.Parse(Console.ReadLine());
@@ -137,7 +133,6 @@ namespace FP_SETURI
             Console.Write("k=");
             k = int.Parse(Console.ReadLine());
 
-            p = 0;
             nr = n;
 
             if(n == 0)
@@ -145,6 +140,7 @@ namespace FP_SETURI
                 Console.WriteLine("n = 0");
                 return;
             }
+
             for(int i = 0; i < k; i++)
             {
                 p = nr % 10;
@@ -168,13 +164,9 @@ namespace FP_SETURI
             c = int.Parse(Console.ReadLine());
 
             if(a + b > c && b + c > a && a + c > b)
-            {
                 Console.WriteLine("a, b si c, pot forma un triunghi.");
-            }
             else
-            {
                 Console.WriteLine("a, b si c, nu pot forma.");
-            }
         }
 
         /// <summary>
@@ -229,9 +221,7 @@ namespace FP_SETURI
             for(int i = 1; i <= n; i++)
             {
                 if(n % i == 0)
-                {
                     Console.WriteLine(i);
-                }
             }
         }
 
@@ -259,12 +249,9 @@ namespace FP_SETURI
                 }
             }
             if(isPrime)
-            {
                 Console.WriteLine($"{n} este un numar prim.");
-            } else
-            {
+            else
                 Console.WriteLine($"{n} nu este un numar prim");
-            }
         }
 
         /// <summary>
@@ -301,9 +288,7 @@ namespace FP_SETURI
             for(int i = min; i <= max; i++)
             {
                 if(n % i == 0)
-                {
                     countDivisors++;
-                }
             }
             Console.WriteLine($"Numarul de divizori ai lui {n} din intervalul [{min}, {max}] este {countDivisors}.");
         }
@@ -325,15 +310,10 @@ namespace FP_SETURI
                 if(i % 4 == 0) 
                 {
                     if(i % 100 == 0)
-                    {
                         if(i % 400 == 0)
-                        {
                             countLeapYears++;
-                        }
-                    } else
-                    {
+                    else
                         countLeapYears++;
-                    }
                 }
             }
             Console.WriteLine($"Sunt {countLeapYears} ani bisecti intre anii {y1} si {y2}.");
@@ -353,18 +333,13 @@ namespace FP_SETURI
             for (int i = 0, j = n.Length - 1; i <= n.Length / 2; i++, j--)
             {
                 if (n[i] != n[j])
-                {
                     isPalindrom = false;
-                }
             }
 
             if(isPalindrom)
-            {
                 Console.WriteLine($"Numarul {n} este un numar palindrom.");
-            } else
-            {
+            else
                 Console.WriteLine($"Numarul {n} nu este un numar palindrom.");
-            }
         }
 
         /// <summary>
@@ -400,9 +375,7 @@ namespace FP_SETURI
                     }
                 }
                 if(!hasSwapped)
-                {
                     break;
-                }
             }
 
             for(int i = 0; i < arr.Length; i++)
@@ -548,9 +521,7 @@ namespace FP_SETURI
             n = int.Parse(Console.ReadLine());
 
             if(n <= 1)
-            {
                 return;
-            }
 
             for (int i = 2; n > 1;)
             {
@@ -561,9 +532,7 @@ namespace FP_SETURI
                     i = 2;
                 }
                 else
-                {
                     i++;
-                }
             }
 
             Console.WriteLine(_18displayPrimeFactors(primeFactors));
@@ -607,18 +576,13 @@ namespace FP_SETURI
             for(int i = 0; i < n.Length; i++) 
             {
                 if (!number.Contains(n[i])) 
-                {
                     number.Add(n[i]);
-                }
             }
             
             if (number.Count == 2)
-            {
                 Console.WriteLine($"Numarul {n} este un numar compus din 2 cifre care se tot repeta.");
-            } else
-            {
+            else
                 Console.WriteLine($"Numarul {n} nu este un numar compus din 2 cifre care se tot repeta.");
-            }
         }
 
         /// <summary>
@@ -653,13 +617,9 @@ namespace FP_SETURI
                 response = Console.ReadLine();
                 
                 if (response.ToLower() == "da")
-                {
                     minim = m;
-                }
                 else 
-                {
                     maxim = m - 1;
-                }
             }
 
             Console.WriteLine($"Este numarul tau mai mare sau egal decat {maxim}?");
