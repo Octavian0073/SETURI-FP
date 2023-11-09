@@ -646,7 +646,7 @@ namespace FP_SETURI
         /// Se dau doi vectori. Se cere sa se determine ordinea lor lexicografica 
         /// (care ar trebui sa apara primul in dictionar). 
         /// </summary>
-        public static void _21()
+        public static int _21()
         {
             string[] v1, v2;  int result = 0;
             Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
@@ -661,21 +661,24 @@ namespace FP_SETURI
                 {
                     if ((int)v1[i][j] != (int)v2[i][j])
                     {
-                        result = (int)v1[i][j] - (int)v2[i][j]; 
-                        break;
+                        result = (int)v1[i][j] - (int)v2[i][j];
+                        return result;
                     }
                 }
                 if (result == 0 && v1[i].Length != v2[i].Length)
                 {
                     result = v1[i].Length - v2[i].Length;
-                    break;
+                    return result;
                 }
             }
 
             if (result == 0 && v1.Length != v2.Length)
+            {
                 result = v1.Length - v2.Length;
+                return result;
+            }
 
-            printResult(result);
+            return result;
         }
 
         public static void printResult(int result)
@@ -690,7 +693,7 @@ namespace FP_SETURI
 
         /// <summary>
         /// Se dau doi vectori v1 si v2. Se cere sa determine intersectia, reuniunea, 
-        /// si diferentele v1-v2 si v2 -v1 
+        /// si diferentele v1-v2 si v2-v1 
         /// (implementarea operatiilor cu multimi). Elementele care se repeta vor fi scrise 
         /// o singura data in rezultat. 
         /// </summary>
