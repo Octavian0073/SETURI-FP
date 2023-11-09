@@ -648,7 +648,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _21()
         {
-            string[] v1, v2;  int idx = 0, result = 0;
+            string[] v1, v2;  int result = 0;
             Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
             v1 = Console.ReadLine().Split(' ');
 
@@ -657,35 +657,35 @@ namespace FP_SETURI
 
             for(int i = 0; i < v1.Length && i < v2.Length; i++)
             {
-                idx = i;
-                for (int j = 0; j < v1[i].Length && j < v2[i].Length; j++)
+                for(int j = 0; j < v1[i].Length && j < v2[i].Length; j++)
                 {
-                    if ((int)v1[i][j] == (int)v2[i][j])
+                    if ((int)v1[i][j] != (int)v2[i][j])
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        result = ((int)v1[i][j] - (int)v2[i][j]);
+                        result = (int)v1[i][j] - (int)v2[i][j]; 
                         break;
                     }
                 }
-            }
-            if (v1[idx].Length < v2[idx].Length)
-            {
-                result = v1[idx].Length - v2[idx].Length;
-            }
-            if (v1[idx].Length > v2[idx].Length)
-            {
-                result = v1[idx].Length - v2[idx].Length;
+                if (result == 0 && v1[i].Length != v2[i].Length)
+                {
+                    result = v1[i].Length - v2[i].Length;
+                    break;
+                }
             }
 
+            if (result == 0 && v1.Length != v2.Length)
+                result = v1.Length - v2.Length;
+
+            printResult(result);
+        }
+
+        public static void printResult(int result)
+        {
             if (result < 0)
-                Console.WriteLine($"DPDV lexicografic, vectorul v1 este primul, urmat de v2.");
+                Console.WriteLine("Din punct de vedere lexicografic, vectorul v1 este primul, urmat de v2.");
             else if (result > 0)
-                Console.WriteLine($"DPDV lexicografic, vectorul v2 este primul, urmat de v1.");
+                Console.WriteLine("Din punct de vedere lexicografic, vectorul v2 este primul, urmat de v1.");
             else
-                Console.WriteLine("Vectorii sunt identici dpdv lexicografic.");
+                Console.WriteLine("Din punct de vedere lexicografic, vectorii sunt identici.");
         }
 
         /// <summary>
