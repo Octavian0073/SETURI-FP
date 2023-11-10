@@ -699,7 +699,118 @@ namespace FP_SETURI
         /// </summary>
         public static void _22()
         {
+            List<string> v1 = new List<string>(), v2 = new List<string>();
+            Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
+            v1 = Console.ReadLine().Split(' ').ToList();
 
+            Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
+            v2 = Console.ReadLine().Split(' ').ToList();
+
+            intersectia(v1, v2);
+            reuniune(v1, v2);
+            diferente(v1, v2);
+        }
+
+        public static void intersectia(List<string> v1, List<string> v2)
+        {
+            List<string> result = new List<string>();
+
+            if (v1.Count >= v2.Count)
+            {
+                for(int i = 0, j = 0; i < v2.Count; i++)
+                {
+                    if (v1.Contains(v2[i]) && !result.Contains(v2[i]))
+                        result.Add(v2[i]);
+                }
+            }
+            else
+            {
+                for (int i = 0, j = 0; i < v1.Count; i++)
+                {
+                    if (v2.Contains(v1[i]) && !result.Contains(v2[i]))
+                        result.Add(v1[i]);
+                }
+            }
+
+            Console.WriteLine("Intersectia dintre cei doi vectori este:");
+            for(int i = 0; i < result.Count; i++)
+                Console.Write($"{result[i]} ");
+            Console.WriteLine();
+        }
+
+        public static void reuniune(List<string> v1, List<string> v2)
+        {
+            List<string> result = new List<string>();
+            
+            if (v1.Count >= v2.Count)
+            {
+                for (int i = 0; i < v1.Count; i++)
+                {
+                    if (!result.Contains(v1[i]))
+                        result.Add(v1[i]);
+
+                    if (i < v2.Count)
+                        if (!result.Contains(v2[i]))
+                            result.Add(v2[i]);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < v2.Count; i++)
+                {
+                    if (!result.Contains(v2[i]))
+                        result.Add(v2[i]);
+
+                    if (i < v1.Count)
+                        if (!result.Contains(v1[i]))
+                            result.Add(v1[i]);
+                }
+            }
+
+            Console.WriteLine("Reuniunea dintre cei doi vectori este:");
+            for (int i = 0; i < result.Count; i++)
+                Console.Write($"{result[i]} ");
+            Console.WriteLine();
+        }
+
+        public static void diferente(List<string> v1, List<string> v2)
+        {
+            List<string> result1 = new List<string>();
+            List<string> result2 = new List<string>();
+
+            if (v1.Count >= v2.Count)
+            {
+                for (int i = 0; i < v1.Count; i++)
+                {
+                    if (!v2.Contains(v1[i]) && !result1.Contains(v1[i]))
+                        result1.Add(v1[i]);
+
+                    if (i < v2.Count)
+                        if (!v1.Contains(v2[i]) && !result2.Contains(v2[i]))
+                            result2.Add(v2[i]);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < v2.Count; i++)
+                {
+                    if (!v1.Contains(v2[i]) && !result2.Contains(v2[i]))
+                        result2.Add(v2[i]);
+
+                    if (i < v1.Count)
+                        if (!v2.Contains(v1[i]) && !result1.Contains(v1[i]))
+                            result1.Add(v1[i]);
+                }
+            }
+
+            Console.WriteLine("Multimea diferentei V1 - V2 este:");
+            for (int i = 0; i < result1.Count; i++)
+                Console.Write($"{result1[i]} ");
+            Console.WriteLine();
+
+            Console.WriteLine("Multimea diferentei V2 - V1 este:");
+            for (int i = 0; i < result2.Count; i++)
+                Console.Write($"{result2[i]} ");
         }
 
         /// <summary>
