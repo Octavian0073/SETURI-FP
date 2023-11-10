@@ -839,7 +839,17 @@ namespace FP_SETURI
         /// </summary>
         public static void _25()
         {
+            List<int> v1 = new List<int>(), v2 = new List<int>();
+            Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
+            v1 = int.Parse(Console.ReadLine().Split(' ').ToList());
 
+            Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
+            v2 = int.Parse(Console.ReadLine().Split(' ').ToList());
+
+            for (int i = 0; i < v1.Length; i++)
+            {
+
+            }
         }
 
         /// <summary>

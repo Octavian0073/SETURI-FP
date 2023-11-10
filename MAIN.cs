@@ -75,10 +75,10 @@ namespace FP_SETURI
             //SET_3._19();
             //SET_3._20();
             //SET_3.printResult(SET_3._21());
-            SET_3._22();
+            //SET_3._22();
             //SET_3._23();
             //SET_3._24();
-            //SET_3._25();
+            SET_3._25();
             //SET_3._26();
             //SET_3._27();
             //SET_3._28();
