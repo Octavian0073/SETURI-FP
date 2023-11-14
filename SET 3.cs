@@ -985,23 +985,36 @@ namespace FP_SETURI
             numereStr = Console.ReadLine().Split(' ');
             num = new int[numereStr.Length];
 
-            quickSort(num, 0, num.Length - 1);
-
             for (int i = 0; i < numereStr.Length; i++)
                 num[i] = int.Parse(numereStr[i]);
+
+            quickSort(num, 0, num.Length - 1);
+            
+            for(int i = 0; i < num.Length; i++)
+                Console.Write($"{num[i]} ");
+            Console.WriteLine();
         }
 
-        public static void swap(int[] num, int i, int j)
+        public static void swap(int[] num, int j, int i)
         {
-            int temp = num[i];
-            num[i] = num[j];
-            num[j] = temp;
+            int temp = num[j];
+            num[j] = num[i];
+            num[i] = temp;
         }
 
         public static int partition(int[] num, int start, int end)
         {
             int pivot = num[end];
-            
+            int j = start - 1;
+            for(int i = start; i < end; i++)
+            {
+                if (num[i] < pivot)
+                {
+                    j++;
+                    swap(num, j, i);
+                }
+            }
+            swap(num, j + 1, end); return (j + 1);
         }
 
         public static void quickSort(int[] num, int start, int end)
