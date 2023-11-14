@@ -1033,9 +1033,38 @@ namespace FP_SETURI
         /// </summary>
         public static void _29()
         {
+            string[] numereStr; int[] num;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
+
+            for (int i = 0; i < numereStr.Length; i++)
+                num[i] = int.Parse(numereStr[i]);
+
+            sort(num, 0, num.Length - 1);
+
+            for (int i = 0; i < num.Length; i++)
+                Console.Write($"{num[i]} ");
+            Console.WriteLine();
+        }
+
+        public static void merge(int[] num, int min, int mid, int max)
+        {
 
         }
 
+        public static void sort(int[] num, int min, int max)
+        {
+            if(min < max) 
+            {
+                int mid = min + (max - min) / 2;
+
+                sort(num, min, mid);
+                sort(num, mid + 1, max);
+
+                merge(num, min, mid, max)
+            }
+        }
         /// <summary>
         /// Sortare bicriteriala. Se dau doi vectori de numere intregi E si W, 
         /// unde E[i] este un numar iar W[i] este un numar care reprezinta ponderea lui E[i]. 
