@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace FP_SETURI
 {
@@ -387,20 +388,32 @@ namespace FP_SETURI
             for (int i = 0; i < numereStr.Length; i++)
                 num[i] = int.Parse(numereStr[i]);
 
-            for (int i = 0; i < num.Length - 1; i++)
+            //for (int i = 0; i < num.Length - 1; i++)
+            //{
+            //    if (num[i] > num[i + 1])
+            //    {
+            //        for (int j = i + 1; j > 0; j--)
+            //        {
+            //            if (num[j - 1] > num[j])
+            //            {
+            //                temp = num[j - 1];
+            //                num[j - 1] = num[j];
+            //                num[j] = temp;
+            //            }
+            //        }
+            //    }
+            //}
+
+            for (int i = 1; i < num.Length; i++)
             {
-                if (num[i] > num[i + 1])
+                int currentIdx = num[i];
+                int j = i - 1;
+                while (j >= 0 && num[j] > currentIdx)
                 {
-                    for (int j = i + 1; j > 0; j--)
-                    {
-                        if (num[j - 1] > num[j])
-                        {
-                            temp = num[j - 1];
-                            num[j - 1] = num[j];
-                            num[j] = temp;
-                        }
-                    }
+                    num[j + 1] = num[j];
+                    j--;
                 }
+                num[j + 1] = currentIdx;
             }
 
             for (int i = 0; i < num.Length; i++)
@@ -717,7 +730,7 @@ namespace FP_SETURI
 
             if (v1.Count >= v2.Count)
             {
-                for(int i = 0, j = 0; i < v2.Count; i++)
+                for(int i = 0; i < v2.Count; i++)
                 {
                     if (v1.Contains(v2[i]) && !result.Contains(v2[i]))
                         result.Add(v2[i]);
@@ -725,7 +738,7 @@ namespace FP_SETURI
             }
             else
             {
-                for (int i = 0, j = 0; i < v1.Count; i++)
+                for (int i = 0; i < v1.Count; i++)
                 {
                     if (v2.Contains(v1[i]) && !result.Contains(v2[i]))
                         result.Add(v1[i]);
@@ -839,17 +852,41 @@ namespace FP_SETURI
         /// </summary>
         public static void _25()
         {
-            List<int> v1 = new List<int>(), v2 = new List<int>();
+            string[] numereStr; List<int> v1 = new List<int>(), v2 = new List<int>(), v3 = new List<int>(); int v1Idx = 0, v2Idx = 0;
             Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
-            v1 = int.Parse(Console.ReadLine().Split(' ').ToList());
+            numereStr = Console.ReadLine().Split(' ');
+            for (int i = 0; i < numereStr.Length; i++)
+                v1.Add(int.Parse(numereStr[i]));
 
             Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
-            v2 = int.Parse(Console.ReadLine().Split(' ').ToList());
+            numereStr = Console.ReadLine().Split(' ');
+            for(int i = 0; i < numereStr.Length; i++)
+                v2.Add(int.Parse(numereStr[i]));
 
-            for (int i = 0; i < v1.Length; i++)
+            for (int i = 0, j = 0; i < v1.Count && j < v2.Count;)
             {
-
+                if (v1[i] <= v2[j])
+                {
+                    v3.Add(v1[i]);
+                    i++;
+                    v1Idx = i;
+                }
+                else
+                {
+                    v3.Add(v2[j]);
+                    j++;
+                    v2Idx = j;
+                }
             }
+            if(v1Idx == v1.Count)
+                for (int j = v2Idx; j < v2.Count; j++)
+                    v3.Add(v2[j]);
+            else
+                for (int i = v1Idx; i < v1.Count; i++)
+                    v3.Add(v1[i]);
+
+            for (int i = 0; i < v3.Count; i++)
+                Console.Write($"{v3[i]} ");
         }
 
         /// <summary>
@@ -859,7 +896,51 @@ namespace FP_SETURI
         /// </summary>
         public static void _26()
         {
+            string numereStr; List<int> nr1 = new List<int>(), nr2 = new List<int>(), result = new List<int>(); int carry = 0, nrIdx = 0;
+            Console.WriteLine("Tastati un numar foarte mare:");
+            numereStr = Console.ReadLine();
+            for (int i = numereStr.Length - 1; i >= 0; i--)
+                nr1.Add(int.Parse(numereStr[i].ToString()));
 
+            Console.WriteLine("Tastati un numar foarte mare:");
+            numereStr = Console.ReadLine();
+            for (int i = numereStr.Length - 1; i >= 0; i--)
+                nr2.Add(int.Parse(numereStr[i].ToString()));
+
+            for(int i = 0; i < nr1.Count && i < nr2.Count; i++)
+            {
+                nrIdx = i;
+                if ((nr1[i] + nr2[i] + carry) < 10)
+                {
+                    result.Add(nr1[i] + nr2[i] + carry);
+                    carry = 0;
+                }
+                else
+                {
+                    result.Add((nr1[i] + nr2[i] + carry) % 10);
+                    carry = (nr1[i] + nr2[i] + carry) / 10;
+                }
+            }
+
+            if(nrIdx == nr1.Count)
+            {
+                for (int i = nrIdx; i < nr2.Count; i++)
+                {
+                    if ((nr2[i] + carry) < 10)
+                    {
+                        result.Add(nr2[i] + carry);
+                        carry = 0;
+                    }
+                    else
+                    {
+                        result.Add((nr2[i] + carry) % 10);
+                        carry = (nr2[i] + carry) / 10;
+                    }
+                }
+            }
+
+            for (int i = result.Count - 1; i >= 0; i--)
+                Console.Write($"{result[i]}");
         }
 
         /// <summary>
