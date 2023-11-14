@@ -380,7 +380,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _13()
         {
-            string[] numereStr; int[] num; int temp;
+            string[] numereStr; int[] num;
             Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
             numereStr = Console.ReadLine().Split(' ');
             num = new int[numereStr.Length];
@@ -396,7 +396,7 @@ namespace FP_SETURI
             //        {
             //            if (num[j - 1] > num[j])
             //            {
-            //                temp = num[j - 1];
+            //                int temp = num[j - 1];
             //                num[j - 1] = num[j];
             //                num[j] = temp;
             //            }
@@ -406,14 +406,14 @@ namespace FP_SETURI
 
             for (int i = 1; i < num.Length; i++)
             {
-                int currentIdx = num[i];
+                int currentVal = num[i];
                 int j = i - 1;
-                while (j >= 0 && num[j] > currentIdx)
+                while (j >= 0 && num[j] > currentVal)
                 {
                     num[j + 1] = num[j];
                     j--;
                 }
-                num[j + 1] = currentIdx;
+                num[j + 1] = currentVal;
             }
 
             for (int i = 0; i < num.Length; i++)
@@ -949,7 +949,30 @@ namespace FP_SETURI
         /// </summary>
         public static void _27()
         {
+            string[] numereStr; int[] num; int index;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            Console.WriteLine("Tastati pozitia din vector dorita sa se afle dupa sortare:");
+            index = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < numereStr.Length; i++)
+                num[i] = int.Parse(numereStr[i]);
+
+            for(int i = 1; i < num.Length; i++)
+            {
+                int currentVal = num[i];
+                int j = i - 1;
+                while(j >= 0 && num[j] > currentVal)
+                {
+                    num[j + 1] = num[j];
+                    j--;
+                }
+                num[j + 1] = currentVal;
+            }
+
+            Console.WriteLine($"Dupa sortare, valoare de pe pozitia {index}, este {num[index]}");
         }
 
         /// <summary>
@@ -957,7 +980,39 @@ namespace FP_SETURI
         /// </summary>
         public static void _28()
         {
+            string[] numereStr; int[] num;
+            Console.WriteLine("Tastati numerele vectorului, separandu le printr un spatiu:");
+            numereStr = Console.ReadLine().Split(' ');
+            num = new int[numereStr.Length];
 
+            quickSort(num, 0, num.Length - 1);
+
+            for (int i = 0; i < numereStr.Length; i++)
+                num[i] = int.Parse(numereStr[i]);
+        }
+
+        public static void swap(int[] num, int i, int j)
+        {
+            int temp = num[i];
+            num[i] = num[j];
+            num[j] = temp;
+        }
+
+        public static int partition(int[] num, int start, int end)
+        {
+            int pivot = num[end];
+            
+        }
+
+        public static void quickSort(int[] num, int start, int end)
+        {
+            if(start < end)
+            {
+                int pivotIdx = partition(num, start, end);
+
+                quickSort(num, start, pivotIdx - 1);
+                quickSort(num, pivotIdx + 1, end);
+            }
         }
 
         /// <summary>
