@@ -1050,7 +1050,41 @@ namespace FP_SETURI
 
         public static void merge(int[] num, int min, int mid, int max)
         {
+            int[] numMin = new int[mid - min + 1]; 
+            int[] numMax = new int[max - mid];
 
+            for(int k = 0; k < numMin.Length; k++)
+                numMin[k] = num[min + k];
+            for(int l = 0; l < numMax.Length; l++)
+                numMax[l] = num[mid + 1 + l];
+
+            int i = 0; int j = 0;
+            int numIdx = min;
+            while(i < numMin.Length && j < numMax.Length)
+            {
+                if (numMin[i] <= numMax[j])
+                {
+                    num[numIdx] = numMin[i];
+                    i++;
+                }
+                else
+                {
+                    num[numIdx] = numMax[j];
+                    j++;
+                }
+                numIdx++;
+            }
+
+            while(i < numMin.Length)
+            {
+                num[numIdx] = numMin[i];
+                i++; numIdx++;
+            }
+            while (j < numMax.Length)
+            {
+                num[numIdx] = numMax[j];
+                j++; numIdx++;
+            }
         }
 
         public static void sort(int[] num, int min, int max)
@@ -1062,7 +1096,7 @@ namespace FP_SETURI
                 sort(num, min, mid);
                 sort(num, mid + 1, max);
 
-                merge(num, min, mid, max)
+                merge(num, min, mid, max);
             }
         }
         /// <summary>
@@ -1078,7 +1112,6 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// 
         ///(Element majoritate). Intr-un vector cu n elemente, un element m este element majoritate 
         ///daca mai mult de n/2 din valorile vectorului sunt egale cu 
         /// m(prin urmare, daca un vector are element majoritate acesta este unui singur).  
