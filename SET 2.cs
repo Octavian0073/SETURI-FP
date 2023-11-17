@@ -9,7 +9,7 @@ namespace FP_SETURI
     internal class SET_2
     {
         /// <summary>
-        /// Se da o secventa de n numere. Sa se determine cate din ele sunt pare. 
+        ///  Se da o secventa de n numere. Sa se determine cate din ele sunt pare. 
         /// </summary>
         public static void _1()
         {
@@ -55,7 +55,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive. 
+        ///  Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive. 
         /// </summary>
         public static void _2()
         {
@@ -80,7 +80,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Calculati suma si produsul numerelor de la 1 la n.
+        ///  Calculati suma si produsul numerelor de la 1 la n.
         /// </summary>
         public static void _3()
         {
@@ -97,8 +97,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. 
-        /// Se considera ca primul element din secventa este pe pozitia zero. Daca numarul nu se afla in secventa raspunsul va fi -1. 
+        ///  Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. 
+        ///  Se considera ca primul element din secventa este pe pozitia zero. Daca numarul nu se afla in secventa raspunsul va fi -1. 
         /// </summary>
         public static void _4()
         {
@@ -129,8 +129,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. 
-        /// Se considera ca primul element din secventa este pe pozitia 0. 
+        ///  Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. 
+        ///  Se considera ca primul element din secventa este pe pozitia 0. 
         /// </summary>
         public static void _5()
         {
@@ -151,7 +151,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare. 
+        ///  Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare. 
         /// </summary>
         public static void _6()
         {
@@ -174,7 +174,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa. 
+        ///  Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa. 
         /// </summary>
         public static void _7()
         {
@@ -199,8 +199,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Determianti al n-lea numar din sirul lui Fibonacci. 
-        /// Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2). Exemplu: 0, 1, 1, 2, 3, 5, 8 ...
+        ///  Determianti al n-lea numar din sirul lui Fibonacci. 
+        ///  Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2). Exemplu: 0, 1, 1, 2, 3, 5, 8 ...
         /// </summary>
         public static void _8()
         {
@@ -220,8 +220,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Sa se determine daca o secventa de n numere este monotona. 
-        /// Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare. 
+        ///  Sa se determine daca o secventa de n numere este monotona. 
+        ///  Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare. 
         /// </summary>
         public static void _9()
         {
@@ -280,7 +280,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa. 
+        ///  Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa. 
         /// </summary>
         public static void _10()
         {
@@ -310,7 +310,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere. 
+        ///  Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere. 
         /// </summary>
         public static void _11()
         {
@@ -331,9 +331,9 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. 
-        /// Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. 
-        /// De ex. pentru secventa 1, 2, 0, 3, 4, 5, 0, 0, 6, 7, 0, 0 raspunsul este 3. 
+        ///  Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. 
+        ///  Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. 
+        ///  De ex. pentru secventa 1, 2, 0, 3, 4, 5, 0, 0, 6, 7, 0, 0 raspunsul este 3. 
         /// </summary>
         public static void _12()
         {
@@ -366,10 +366,10 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau 
-        /// poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive 
-        /// (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). 
-        /// Determinati daca o secventa de n numere este o secventa crescatoare rotita.
+        ///  O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau 
+        ///  poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive 
+        ///  (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). 
+        ///  Determinati daca o secventa de n numere este o secventa crescatoare rotita.
         /// </summary>
         public static void _13()
         {
@@ -400,9 +400,9 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata 
-        /// intr-o secventa montona prin rotiri succesive. 
-        /// Determinati daca o secventa de n numere este o secventa monotona rotita.
+        ///  O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata 
+        ///  intr-o secventa montona prin rotiri succesive. 
+        ///  Determinati daca o secventa de n numere este o secventa monotona rotita.
         /// </summary>
         public static void _14()
         {
@@ -464,10 +464,10 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// O secventa bitonica este o secventa de numere care incepe monoton crescator 
-        /// si continua monoton descrecator. 
-        /// De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. Se da o secventa de n numere. 
-        /// Sa se determine daca este bitonica.
+        ///  O secventa bitonica este o secventa de numere care incepe monoton crescator 
+        ///  si continua monoton descrecator. 
+        ///  De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. Se da o secventa de n numere. 
+        ///  Sa se determine daca este bitonica.
         /// </summary>
         public static void _15()
         {
@@ -497,10 +497,10 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata 
-        /// intr-o secventa bitonica prin rotiri succesive
-        /// (rotire = primul element devine ultimul). 
-        /// Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita. 
+        ///  O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata 
+        ///  intr-o secventa bitonica prin rotiri succesive
+        ///  (rotire = primul element devine ultimul). 
+        ///  Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita. 
         /// </summary>
         public static void _16()
         {
@@ -532,11 +532,11 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. 
-        /// Determinati daca secventa reprezinta o secventa de paranteze corecta si,  
-        /// daca este, determinati nivelul maxim de incuibare a parantezelor. 
-        /// De exemplu 0 1 0 0 1 0 1 1 este corecta si are nivelul maxim de incuibare 2 pe cand 0 0 1 1 1 0 
-        /// este incorecta.
+        ///  Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. 
+        ///  Determinati daca secventa reprezinta o secventa de paranteze corecta si,  
+        ///  daca este, determinati nivelul maxim de incuibare a parantezelor. 
+        ///  De exemplu 0 1 0 0 1 0 1 1 este corecta si are nivelul maxim de incuibare 2 pe cand 0 0 1 1 1 0 
+        ///  este incorecta.
         /// </summary>
         public static void _17()
         {

@@ -30,7 +30,7 @@ namespace FP_SETURI
             //SET_1._17();
             //SET_1._18();
             //SET_1._19();
-            //SET_1._20();
+            //SET_1._20(); TODO
             //SET_1._21();
 
             //SET 2
@@ -68,16 +68,16 @@ namespace FP_SETURI
             //SET_3._12();
             //SET_3._13();
             //SET_3._14();
-            SET_3._15();
+            //SET_3._15();
             //SET_3._16();
             //SET_3._17();
             //SET_3._18();
             //SET_3._19();
-            //SET_3._20();
+            //SET_3._20(); TODO
             //SET_3.printResult(SET_3._21());
             //SET_3._22();
-            //SET_3._23();
-            //SET_3._24();
+            //SET_3._23(); TODO
+            //SET_3._24(); TODO
             //SET_3._25();
             //SET_3._26();
             //SET_3._27();

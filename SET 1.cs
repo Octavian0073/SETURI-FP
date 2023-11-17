@@ -16,7 +16,7 @@ namespace FP_SETURI
     internal class SET_1
     {
         /// <summary>
-        /// Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare. 
+        ///  Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare. 
         /// </summary>
         public static void _1()
         {
@@ -27,12 +27,12 @@ namespace FP_SETURI
             Console.Write("b=");
             b = int.Parse(Console.ReadLine());
             x = -b / a;
-            System.Console.WriteLine($"x= {x}");
+            Console.WriteLine($"x= {x}");
         }
 
         /// <summary>
-        /// Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. 
-        /// Tratati toate cazurile posibile. 
+        ///  Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. 
+        ///  Tratati toate cazurile posibile. 
         /// </summary>
         public static void _2()
         {
@@ -49,12 +49,12 @@ namespace FP_SETURI
             x1 = (-b + Math.Sqrt(delta)) / (2 * a);
             x2 = (-b - Math.Sqrt(delta)) / (2 * a);
 
-            System.Console.WriteLine($"x1= {x1}");
-            System.Console.WriteLine($"x2= {x2}");
+            Console.WriteLine($"x1= {x1}");
+            Console.WriteLine($"x2= {x2}");
         }
 
         /// <summary>
-        /// Determinati daca n se divide cu k, unde n si k sunt date de intrare. 
+        ///  Determinati daca n se divide cu k, unde n si k sunt date de intrare. 
         /// </summary>
         public static void _3()
         {
@@ -72,7 +72,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Detreminati daca un an y este an bisect.
+        ///  Detreminati daca un an y este an bisect.
         /// </summary>
         public static void _4()
         {
@@ -114,13 +114,11 @@ namespace FP_SETURI
                 }
             }
             else
-            {
                 Console.WriteLine($"Anul {y} nu este un an bisect.");
-            }
         }
         /// <summary>
-        /// Extrageti si afisati a k-a cifra de la sfarsitul unui numar.
-        /// Cifrele se numara de la dreapta la stanga.
+        ///  Extrageti si afisati a k-a cifra de la sfarsitul unui numar.
+        ///  Cifrele se numara de la dreapta la stanga.
         /// </summary>
         public static void _5()
         {
@@ -150,7 +148,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Detreminati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi. 
+        ///  Detreminati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi. 
         /// </summary>
         public static void _6()
         {
@@ -170,7 +168,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// (Swap) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare.Se cere sa se inverseze valorile lor. 
+        ///  (Swap) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare.Se cere sa se inverseze valorile lor. 
         /// </summary>
         public static void _7()
         {
@@ -253,7 +251,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Afisati in ordine inversa cifrele unui numar n.
+        ///  Afisati in ordine inversa cifrele unui numar n.
         /// </summary>
         private static void _11()
         {
@@ -264,12 +262,11 @@ namespace FP_SETURI
 
             for(int i = n.Length - 1; i >= 0; i--)
                 Console.Write($"{n[i]}");
-
             Console.WriteLine();
         }
 
         /// <summary>
-        /// Determinati cate numere integi divizibile cu n se afla in intervalul [a, b]. 
+        ///  Determinati cate numere integi divizibile cu n se afla in intervalul [a, b]. 
         /// </summary>
         public static void _12()
         {
@@ -290,7 +287,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Determianti cati ani bisecti sunt intre anii y1 si y2.
+        ///  Determianti cati ani bisecti sunt intre anii y1 si y2.
         /// </summary>
         public static void _13()
         {
@@ -316,8 +313,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Determianti daca un numar n este palindrom. 
-        /// (un numar este palindrom daca citit invers obtinem un numar egal cu el, de ex. 121 sau 12321.
+        ///  Determianti daca un numar n este palindrom. 
+        ///  (un numar este palindrom daca citit invers obtinem un numar egal cu el, de ex. 121 sau 12321.
         /// </summary>
         private static void _14()
         {
@@ -337,7 +334,7 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Se dau 3 numere. Sa se afiseze in ordine crescatoare. 
+        ///  Se dau 3 numere. Sa se afiseze in ordine crescatoare. 
         /// </summary>
         public static void _15()
         {
@@ -374,12 +371,11 @@ namespace FP_SETURI
 
             for(int i = 0; i < arr.Length; i++)
                 Console.Write($" {arr[i]}");
-
             Console.WriteLine();
         }
 
         /// <summary>
-        /// Se dau 5 numere. Sa se afiseze in ordine crescatoare. (nu folositi tablouri)
+        ///  Se dau 5 numere. Sa se afiseze in ordine crescatoare. (nu folositi tablouri)
         /// </summary>
         public static void _16()
         {
@@ -502,8 +498,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Afisati descompunerea in factori primi ai unui numar n.  
-        /// De ex. pentru n = 1176 afisati 2^3 x 3^1 x 7^2.
+        ///  Afisati descompunerea in factori primi ai unui numar n.  
+        ///  De ex. pentru n = 1176 afisati 2^3 x 3^1 x 7^2.
         /// </summary>
         public static void _18()
         {
@@ -554,8 +550,8 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Determinati daca un numar e format doar cu 2 cifre care se pot repeta. 
-        /// De ex. 23222 sau 9009000 sunt astfel de numere, pe cand 593 si 4022 nu sunt.
+        ///  Determinati daca un numar e format doar cu 2 cifre care se pot repeta. 
+        ///  De ex. 23222 sau 9009000 sunt astfel de numere, pe cand 593 si 4022 nu sunt.
         /// </summary>
         public static void _19()
         {
@@ -576,27 +572,26 @@ namespace FP_SETURI
         }
 
         /// <summary>
-        /// Afisati fractia m/n in format zecimal, cu perioada intre paranteze (daca e cazul). 
-        /// Exemplu: 13/30 = 0.4(3). 
-        //(https://github.com/HoreaOros/ROSE2020/blob/master/2611/Program.cs)
-        //O fractie este neperiodica daca numitorul este de forma 2^m*5^n unde m si
-        //n sunt mai mari sau egale decat 0
-        //O fractie este periodica simpla daca numitorul nu se divide cu 2 si nici cu 5. 
-        //O fractie este periodica mixta daca se divide cu 2 si/sau 5 SI se mai divide si
-        //cu alte numere prime diferite de 2 si 5. 
+        ///  Afisati fractia m/n in format zecimal, cu perioada intre paranteze (daca e cazul). 
+        ///  Exemplu: 13/30 = 0.4(3). 
+        ///  (https://github.com/HoreaOros/ROSE2020/blob/master/2611/Program.cs)
+        ///  O fractie este neperiodica daca numitorul este de forma 2^m*5^n unde m si
+        ///  n sunt mai mari sau egale decat 0
+        ///  O fractie este periodica simpla daca numitorul nu se divide cu 2 si nici cu 5. 
+        ///  O fractie este periodica mixta daca se divide cu 2 si/sau 5 SI se mai divide si
+        ///  cu alte numere prime diferite de 2 si 5. 
         /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
         public static void _20()
         {
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Ghiciti un numar intre 1 si 1024 prin intrebari de forma "numarul este mai mare sau egal decat x?". 
+        ///  Ghiciti un numar intre 1 si 1024 prin intrebari de forma "numarul este mai mare sau egal decat x?". 
         /// </summary>
         public static void _21()
         {
-            int n = 0, minim = 1, maxim = 2024, m;
+            int n, minim = 1, maxim = 2024, m;
             string response;
 
             while(maxim - minim > 1)
@@ -616,14 +611,9 @@ namespace FP_SETURI
             response = Console.ReadLine();
 
             if(response.ToLower() == "da")
-            {
-                n = maxim;
-                Console.WriteLine($"Numarul este {n}.");
-            } else
-            {
-                n = minim;
-                Console.WriteLine($"Numarul este {n}.");
-            }
+                Console.WriteLine($"Numarul este {maxim}.");
+            else
+                Console.WriteLine($"Numarul este {minim}.");
         }
     }
 }
