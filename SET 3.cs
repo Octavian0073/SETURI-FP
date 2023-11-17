@@ -204,7 +204,6 @@ namespace FP_SETURI
             Console.WriteLine();
         }
 
-
         /// <summary>
         ///  Reverse. Se da un vector nu n elemente. Se cere sa se inverseze ordinea elementelor din vector. 
         ///  Prin inversare se intelege ca primul element devine ultimul, al doilea devine penultimul etc.
@@ -221,7 +220,6 @@ namespace FP_SETURI
 
             for (int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
-
             Console.WriteLine();
         }
 
@@ -246,7 +244,6 @@ namespace FP_SETURI
 
             for (int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
-
             Console.WriteLine();
         }
 
@@ -276,7 +273,6 @@ namespace FP_SETURI
 
             for (int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
-
             Console.WriteLine();
         }
 
@@ -372,6 +368,7 @@ namespace FP_SETURI
 
             for(int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -387,22 +384,6 @@ namespace FP_SETURI
             for (int i = 0; i < arrStr.Length; i++)
                 arr[i] = int.Parse(arrStr[i]);
 
-            //for (int i = 0; i < num.Length - 1; i++)
-            //{
-            //    if (num[i] > num[i + 1])
-            //    {
-            //        for (int j = i + 1; j > 0; j--)
-            //        {
-            //            if (num[j - 1] > num[j])
-            //            {
-            //                int temp = num[j - 1];
-            //                num[j - 1] = num[j];
-            //                num[j] = temp;
-            //            }
-            //        }
-            //    }
-            //}
-
             for (int i = 1; i < arr.Length; i++)
             {
                 int currentVal = arr[i];
@@ -417,6 +398,7 @@ namespace FP_SETURI
 
             for (int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -447,6 +429,7 @@ namespace FP_SETURI
 
             for (int i = 0; i < arr.Length; i++)
                 Console.Write($"{arr[i]} ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -462,17 +445,14 @@ namespace FP_SETURI
             for (int i = 0; i < arrStr.Length; i++)
                 arr.Add(int.Parse(arrStr[i]));
 
-            for(int i = 0; i< arr.Count - 1; i++)
-            {
+            for(int i = 0; i < arr.Count - 1; i++)
                 for(int j = i + 1; j < arr.Count; j++)
-                {
                     if (arr[i] == arr[j])
                         arr.RemoveAt(j);
-                }
-            }
 
             for (int i = 0; i < arr.Count; i++)
                 Console.Write($"{arr[i]} ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -540,7 +520,6 @@ namespace FP_SETURI
             while(num.Count > 0)
             {
                 d = num.Pop();
-
                 if(d < 10)
                     Console.Write(d);
                 else
@@ -689,7 +668,6 @@ namespace FP_SETURI
                 result = v1.Length - v2.Length;
                 return result;
             }
-
             return result;
         }
 
@@ -728,21 +706,13 @@ namespace FP_SETURI
             List<string> result = new List<string>();
 
             if (v1.Count >= v2.Count)
-            {
                 for(int i = 0; i < v2.Count; i++)
-                {
                     if (v1.Contains(v2[i]) && !result.Contains(v2[i]))
                         result.Add(v2[i]);
-                }
-            }
             else
-            {
                 for (int i = 0; i < v1.Count; i++)
-                {
                     if (v2.Contains(v1[i]) && !result.Contains(v2[i]))
                         result.Add(v1[i]);
-                }
-            }
 
             Console.WriteLine("Intersectia dintre cei doi vectori este:");
             for(int i = 0; i < result.Count; i++)
@@ -778,7 +748,6 @@ namespace FP_SETURI
                             result.Add(v1[i]);
                 }
             }
-
             Console.WriteLine("Reuniunea dintre cei doi vectori este:");
             for (int i = 0; i < result.Count; i++)
                 Console.Write($"{result[i]} ");
@@ -814,7 +783,6 @@ namespace FP_SETURI
                             result1.Add(v1[i]);
                 }
             }
-
             Console.WriteLine("Multimea diferentei V1 - V2 este:");
             for (int i = 0; i < result1.Count; i++)
                 Console.Write($"{result1[i]} ");
@@ -886,6 +854,7 @@ namespace FP_SETURI
 
             for (int i = 0; i < v3.Count; i++)
                 Console.Write($"{v3[i]} ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -953,6 +922,7 @@ namespace FP_SETURI
 
             for (int i = result.Count - 1; i >= 0; i--)
                 Console.Write($"{result[i]}");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -1185,7 +1155,6 @@ namespace FP_SETURI
                     break;
                 }
             }
-
             if (hasM)
                 Console.WriteLine($"Vectorul are element majoritate, iar acesta este {m}.");
             else
