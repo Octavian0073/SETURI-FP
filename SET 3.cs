@@ -637,18 +637,26 @@ namespace FP_SETURI
         ///  Se dau doi vectori. Se cere sa se determine ordinea lor lexicografica 
         ///  (care ar trebui sa apara primul in dictionar). 
         /// </summary>
-        public static int _21()
+        public static void _21()
         {
-            string[] v1, v2;  int result = 0;
+            string[] v1, v2;  int result;
             Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
             v1 = Console.ReadLine().Split(' ');
 
             Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
             v2 = Console.ReadLine().Split(' ');
 
-            for(int i = 0; i < v1.Length && i < v2.Length; i++)
+            result = lexicographicOrder(v1, v2);
+
+            printResult(result);
+        }
+
+        public static int lexicographicOrder(string[] v1, string[] v2)
+        {
+            int result = 0;
+            for (int i = 0; i < v1.Length && i < v2.Length; i++)
             {
-                for(int j = 0; j < v1[i].Length && j < v2[i].Length; j++)
+                for (int j = 0; j < v1[i].Length && j < v2[i].Length; j++)
                 {
                     if ((int)v1[i][j] != (int)v2[i][j])
                     {
@@ -706,14 +714,17 @@ namespace FP_SETURI
             List<string> result = new List<string>();
 
             if (v1.Count >= v2.Count)
-                for(int i = 0; i < v2.Count; i++)
+            {
+                for (int i = 0; i < v2.Count; i++)
                     if (v1.Contains(v2[i]) && !result.Contains(v2[i]))
                         result.Add(v2[i]);
+            }
             else
+            {
                 for (int i = 0; i < v1.Count; i++)
                     if (v2.Contains(v1[i]) && !result.Contains(v2[i]))
                         result.Add(v1[i]);
-
+            }
             Console.WriteLine("Intersectia dintre cei doi vectori este:");
             for(int i = 0; i < result.Count; i++)
                 Console.Write($"{result[i]} ");

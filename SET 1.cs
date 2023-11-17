@@ -591,7 +591,7 @@ namespace FP_SETURI
         /// </summary>
         public static void _21()
         {
-            int n, minim = 1, maxim = 2024, m;
+            int minim = 1, maxim = 2024, m;
             string response;
 
             while(maxim - minim > 1)
