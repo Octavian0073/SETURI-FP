@@ -1139,7 +1139,7 @@ namespace FP_SETURI
                 int currentVal = arr[i];
                 int currentPond = pond[i];
                 int j = i - 1;
-                while (j >= 0 && arr[j] > currentVal || j >= 0 && arr[j] == currentVal && pond[j] < pond[j + 1])
+                while (j >= 0 && (arr[j] > currentVal || (arr[j] == currentVal && pond[j] < currentPond)))
                 {
                     arr[j + 1] = arr[j];
                     pond[j + 1] = pond[j];
