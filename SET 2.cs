@@ -338,28 +338,45 @@ namespace FP_SETURI
         public static void _12()
         {
             Console.WriteLine("Asum ca in cazul de fata, un grup poate sa insemne si o cifra diferita de 0 intre 2 zerouri (nu neaparat 2 sau mai multe).");
-            int n, x, nrGrupuri = 0,consecutive = 0;
+            int n, x, y = 0, nrGrupuri = 0,consecutive = 0;
             Console.WriteLine("Tastati numarul de numere din secventa:");
             Console.Write("n=");
             n = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < n; i++)
             {
+                x = y;
                 Console.WriteLine("Introduceti un numar din secventa:");
-                x = int.Parse(Console.ReadLine());
+                y = int.Parse(Console.ReadLine());
 
-                if(x != 0)
-                    consecutive++;
+                //if (y != 0)
+                //    consecutive++;
+                //else
+                //{
+                //    if (consecutive != 0) //daca un grup se refera la cel putin 2 cifre dintre 0 uri, atunci am fi completat cu '&& consecutive >= 2'
+                //    {
+                //        nrGrupuri++;
+                //        consecutive = 0;
+                //    }
+                //}
+
+                //OR
+
+                if (y != 0)
+                    if (y == x)
+                        consecutive++;
                 else
                 {
-                    if(consecutive != 0) //daca un grup se refera la cel putin 2 cifre dintre 0 uri, atunci am fi completat cu '&& consecutive >= 2'
+                    if (consecutive != 0) //daca un grup se refera la cel putin 2 cifre dintre 0 uri, atunci am fi completat cu '&& consecutive >= 2'
                     {
                         nrGrupuri++;
                         consecutive = 0;
                     }
                 }
             }
-            if(nrGrupuri > 0)
+
+
+            if (nrGrupuri > 0)
                 Console.WriteLine($"Numarul de grupuri din secventa este de {nrGrupuri}.");
             else
                 Console.WriteLine($"Nu sunt grupuri.");
