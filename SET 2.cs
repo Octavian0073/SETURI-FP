@@ -375,7 +375,6 @@ namespace FP_SETURI
                 }
             }
 
-
             if (nrGrupuri > 0)
                 Console.WriteLine($"Numarul de grupuri din secventa este de {nrGrupuri}.");
             else
