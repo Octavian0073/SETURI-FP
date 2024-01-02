@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading;
@@ -583,7 +584,54 @@ namespace FP_SETURI
         /// </summary>
         public static void _20()
         {
-            throw new NotImplementedException();
+            int m, n;
+            Console.WriteLine("Tastati un numar m:");
+            Console.Write("m=");
+            m = int.Parse(Console.ReadLine());
+            Console.WriteLine("Tastati un numar n:");
+            Console.Write("n=");
+            n = int.Parse(Console.ReadLine());
+
+            int digit, rem; bool hasPeriod = false;
+            int integer = m / n;
+            int fract = m % n;
+
+            List<int> digits = new List<int>();
+            List<int> rems = new List<int>();
+            rems.Add(fract);
+
+            do
+            {
+                digit = fract * 10 / n;
+                digits.Add(digit);
+                rem = fract * 10 % n;
+
+                if (!rems.Contains(rem))
+                    rems.Add(rem);
+                else
+                {
+                    hasPeriod = true;
+                    break;
+                }
+                fract = rem;
+            } while ( rem != 0 );
+
+            Console.Write($"{integer}.");
+            if(!hasPeriod)
+            {
+                foreach (int d in digits)
+                    Console.Write(d);
+            } 
+            else
+            {
+                for(int i = 0; i < rems.Count; i++)
+                {
+                    if (rems[i] == rem)
+                        Console.Write("(");
+                    Console.Write(digits[i]);
+                }
+                Console.WriteLine(")");
+            }
         }
 
         /// <summary>
