@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Diagnostics;
 using System.Security.Policy;
+using System.Resources;
+using System.Xml.XPath;
 
 namespace FP_SETURI
 {
@@ -704,113 +706,145 @@ namespace FP_SETURI
             Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
             v2 = Console.ReadLine().Split(' ').ToList();
 
-            intersectia(v1, v2);
-            reuniune(v1, v2);
+            PrintMultimi(intersectia(v1, v2), 0);
+            PrintMultimi(reuniune(v1, v2), 1);
+
             diferente(v1, v2);
         }
 
-        public static void intersectia(List<string> v1, List<string> v2)
+        private static void PrintMultimi(List<string>result, int type)
         {
-            List<string> result = new List<string>();
-
-            if (v1.Count >= v2.Count)
+            switch(type)
             {
-                for (int i = 0; i < v2.Count; i++)
-                    if (v1.Contains(v2[i]) && !result.Contains(v2[i]))
-                        result.Add(v2[i]);
+                case 0:
+                    Console.WriteLine("Intersectia dintre cei doi vectori este:");
+                    break;
+                case 1:
+                    Console.WriteLine("Reuniunea dintre cei doi vectori este:");
+                    break;
+                case 2:
+                    Console.WriteLine("Multimea diferentei V1 - V2 este:");
+                    break;
+                case 3:
+                    Console.WriteLine("Multimea diferentei V2 - V1 este:");
+                    break;
             }
-            else
-            {
-                for (int i = 0; i < v1.Count; i++)
-                    if (v2.Contains(v1[i]) && !result.Contains(v2[i]))
-                        result.Add(v1[i]);
-            }
-            Console.WriteLine("Intersectia dintre cei doi vectori este:");
-            for(int i = 0; i < result.Count; i++)
-                Console.Write($"{result[i]} ");
-            Console.WriteLine();
-        }
-
-        public static void reuniune(List<string> v1, List<string> v2)
-        {
-            List<string> result = new List<string>();
-            
-            if (v1.Count >= v2.Count)
-            {
-                for (int i = 0; i < v1.Count; i++)
-                {
-                    if (!result.Contains(v1[i]))
-                        result.Add(v1[i]);
-
-                    if (i < v2.Count)
-                        if (!result.Contains(v2[i]))
-                            result.Add(v2[i]);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < v2.Count; i++)
-                {
-                    if (!result.Contains(v2[i]))
-                        result.Add(v2[i]);
-
-                    if (i < v1.Count)
-                        if (!result.Contains(v1[i]))
-                            result.Add(v1[i]);
-                }
-            }
-            Console.WriteLine("Reuniunea dintre cei doi vectori este:");
             for (int i = 0; i < result.Count; i++)
                 Console.Write($"{result[i]} ");
             Console.WriteLine();
+        }
+        
+        public static List<string> intersectia(List<string> v1, List<string> v2)
+        {
+            List<string> result = new List<string>();
+            List<string> smallest, largest;
+            if (v1.Count >= v2.Count)
+            {
+                largest = v1;
+                smallest = v2;
+            }
+            else
+            {
+                largest = v2;
+                smallest = v1;
+            }
+            for (int i = 0; i < smallest.Count; i++)
+                if (largest.Contains(smallest[i]) && !result.Contains(smallest[i]))
+                    result.Add(smallest[i]);
+            return result;
+        }
+
+        public static List<string> reuniune(List<string> v1, List<string> v2)
+        {
+            List<string> result = new List<string>();
+            List<string> smallest, largest;
+            if (v1.Count >= v2.Count)
+            {
+                largest = v1;
+                smallest = v2;
+            }
+            else
+            {
+                largest = v2;
+                smallest = v1;
+            }
+
+            for (int i = 0; i < largest.Count; i++)
+            {
+                if (!result.Contains(largest[i]))
+                    result.Add(largest[i]);
+
+                if (i < smallest.Count)
+                    if (!result.Contains(smallest[i]))
+                        result.Add(smallest[i]);
+            }
+            return result;
         }
 
         public static void diferente(List<string> v1, List<string> v2)
         {
             List<string> result1 = new List<string>();
             List<string> result2 = new List<string>();
+            List<string> smallest, largest;
 
             if (v1.Count >= v2.Count)
             {
-                for (int i = 0; i < v1.Count; i++)
-                {
-                    if (!v2.Contains(v1[i]) && !result1.Contains(v1[i]))
-                        result1.Add(v1[i]);
-
-                    if (i < v2.Count)
-                        if (!v1.Contains(v2[i]) && !result2.Contains(v2[i]))
-                            result2.Add(v2[i]);
-                }
+                largest = v1;
+                smallest = v2;
             }
             else
             {
-                for (int i = 0; i < v2.Count; i++)
-                {
-                    if (!v1.Contains(v2[i]) && !result2.Contains(v2[i]))
-                        result2.Add(v2[i]);
-
-                    if (i < v1.Count)
-                        if (!v2.Contains(v1[i]) && !result1.Contains(v1[i]))
-                            result1.Add(v1[i]);
-                }
+                largest = v2;
+                smallest = v1;
             }
-            Console.WriteLine("Multimea diferentei V1 - V2 este:");
-            for (int i = 0; i < result1.Count; i++)
-                Console.Write($"{result1[i]} ");
-            Console.WriteLine();
 
-            Console.WriteLine("Multimea diferentei V2 - V1 este:");
-            for (int i = 0; i < result2.Count; i++)
-                Console.Write($"{result2[i]} ");
+            for (int i = 0; i < largest.Count; i++)
+            {
+                if (!smallest.Contains(largest[i]) && !result1.Contains(largest[i]))
+                    result1.Add(largest[i]);
+
+                if (i < smallest.Count)
+                    if (!largest.Contains(smallest[i]) && !result2.Contains(smallest[i]))
+                        result2.Add(smallest[i]);
+            }
+
+            //sorting function added for the 23rd exercise
+            PrintMultimi(SortIntegers(result1), 2);
+            PrintMultimi(SortIntegers(result2), 3);
         }
 
         /// <summary>
         ///  Aceleasi cerinte ca si la problema anterioara dar de data asta elementele din v1 respectiv v2 
         ///  sunt in ordine strict crescatoare.
         /// </summary>
+        /// NEINTELEGAND DIFERENTA DINTRE CERINTELE EXERCITIILOR 22 SI 23, AM FACUT O FUNCTIE DE SORTARE SI AM APLICAT O EXERCITIULUI 23..
         public static void _23()
         {
+            List<string> v1 = new List<string>(), v2 = new List<string>();
+            Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
+            v1 = Console.ReadLine().Split(' ').ToList();
 
+            Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
+            v2 = Console.ReadLine().Split(' ').ToList();
+
+            List<string> resultISorted = SortIntegers(intersectia(v1, v2));
+            PrintMultimi(resultISorted, 0);
+            List<string> resultRSorted = SortIntegers(reuniune(v1, v2));
+            PrintMultimi(resultRSorted, 1);
+
+            diferente(v1, v2);
+        }
+
+        private static List<string> SortIntegers(List<string> result)
+        {
+            List<int> sortingList = new List<int>();
+            foreach (string str in result)
+                sortingList.Add(int.Parse(str));
+            sortingList.Sort();
+            List<string> sortedList = new List<string>();
+            foreach(int num in sortingList)
+                sortedList.Add(num.ToString());
+            return sortedList;
         }
 
         /// <summary>
