@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Security.Policy;
 using System.Resources;
 using System.Xml.XPath;
+using System.Runtime;
+using System.Runtime.CompilerServices;
 
 namespace FP_SETURI
 {
@@ -854,7 +856,76 @@ namespace FP_SETURI
         /// </summary>
         public static void _24()
         {
+            List<string> v1 = new List<string>(), v2 = new List<string>();
+            Console.WriteLine("Tastati elementele vectorului v1, separandu le printr un spatiu:");
+            v1 = Console.ReadLine().Split(' ').ToList();
 
+            Console.WriteLine("Tastati elementele vectorului v2, separandu le printr un spatiu:");
+            v2 = Console.ReadLine().Split(' ').ToList();
+
+            Console.WriteLine("Intersectia dintre cei doi vectori este:");
+            Console.WriteLine(intersectiaBin(v1, v2));
+            Console.WriteLine("Reuniunea dintre cei doi vectori este:");
+            Console.WriteLine(reuniuneBin(v1, v2));
+            Console.WriteLine("Multimea diferentei V1 - V2 este:");
+            Console.WriteLine(diferentaBin(v1, v2));
+            Console.WriteLine("Multimea diferentei V2 - V1 este:");
+            Console.WriteLine(diferentaBin(v2, v1));
+        }
+
+        private static int BinToDec(List<string> v)
+        {
+            string vStr = string.Join("", v);
+            int num = Convert.ToInt32(vStr, 2);
+
+            return num;
+        }
+
+        public static string intersectiaBin(List<string> v1, List<string> v2)
+        {
+            v1.Reverse();
+            v2.Reverse();
+            int num1 = BinToDec(v1);
+            int num2 = BinToDec(v2);
+            int num;
+            if(num1 > num2)
+                num = num1 & num2;
+            else num = num2 & num1;
+            string result = Convert.ToString(num, 2);
+            char[] res = result.ToCharArray();
+            Array.Reverse(res);
+
+            return new string(res);
+        }
+
+        public static string reuniuneBin(List<string> v1, List<string> v2)
+        {
+            int num1 = BinToDec(v1);
+            int num2 = BinToDec(v2);
+            int num;
+            if (num1 > num2)
+                num = num1 | num2;
+            else num = num2 | num1;
+
+            string result = Convert.ToString(num, 2);
+            char[] res = result.ToCharArray();
+            Array.Reverse(res);
+
+            return new string(res);
+        }
+
+        public static char[] diferentaBin(List<string> v1, List<string> v2)
+        {
+            int num1 = BinToDec(v1);
+            int num2 = BinToDec(v2);
+            int numXOR = num1 ^ num2;
+            int numFin1 = numXOR & num1;
+
+            string result1 = Convert.ToString(numFin1, 2);
+            char[] res1 = result1.ToCharArray();
+            Array.Reverse(res1);
+
+            return res1;
         }
 
         /// <summary>
